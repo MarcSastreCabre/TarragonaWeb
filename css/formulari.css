@@ -1,0 +1,59 @@
+/*body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}*/
+
+main {
+    display: flex;
+    width: 98%;
+    background-color: #fff;
+    padding: 1%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.contact-form {
+    flex: 1;
+    margin-right: 20px;
+    padding: 20px;
+    width: 50%;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.comments {
+    flex: 1;
+    padding: 10px;
+    
+}
+
+.comment , .respuesta{
+    background-color: #e0e0e0;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.respuesta {
+    margin-left: 40px;
+}

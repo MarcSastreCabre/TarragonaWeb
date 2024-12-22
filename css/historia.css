@@ -1,0 +1,92 @@
+
+
+main {
+    display: flex;
+    padding-top: 0px; /* Ajuste para no solapar con el header */
+    padding-bottom: 40px; /* Ajuste para no solapar con el footer */
+    height: calc(100vh - 160px); /* Ajusta la altura restando el espacio del header y footer */
+}
+
+.timeline {
+    position: sticky;
+    /*top: 80px; /* Ajuste para no solapar con el header */
+    width: 200px;
+    height: calc(100vh - 160px); /* Ajusta la altura restando el espacio del header y footer */
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Permite desplazamiento vertical en la línea cronológica */
+}
+
+.timeline ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.timeline ul li {
+    margin-bottom: 20px;
+}
+
+.timeline ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.timeline ul li a:hover {
+    color: #007bff;
+}
+
+.content {
+    margin-left: 0px;
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto; /* Permite desplazamiento vertical en el contenido */
+}
+
+article {
+    margin-bottom: 40px;
+}
+
+article h2 {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+aside.timeline-info {
+    width: 250px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-left: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Media queries para hacer la web responsive */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .timeline {
+        position: relative;
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+        box-shadow: none;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    aside.timeline-info {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+

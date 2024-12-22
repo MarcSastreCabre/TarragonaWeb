@@ -1,0 +1,95 @@
+.gallery-wrapper {
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    overflow-y: auto; /* Permite desplazamiento vertical */
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-around; /* Distribuye las imágenes uniformemente */
+    gap: 20px; /* Espacio entre los elementos */
+}
+
+.gallery .item {
+    position: relative;
+    flex: 1 1 22%; /* Cada item ocupa aproximadamente el 22% del ancho con espacio entre ellos */
+    box-sizing: border-box;
+}
+
+.gallery .item .cont {
+    display: none; /* Ocultamos todos los divs por defecto */
+    width: 100%; /* Ajusta el tamaño de la imagen al contenedor */
+    height: auto; /* Mantén la proporción de la imagen */
+    cursor: pointer; /* Cambiamos el cursor al pasar sobre las imágenes */
+}
+
+/* Estilo base para .cont */
+.gallery .item input:checked ~ .cont {
+    display: block; /* Mostramos el div del ítem seleccionado */
+    position: fixed; /* Fija el contenedor en la ventana del navegador */
+    top: calc(25vw + 80px); /* Comienza a 1/4 del ancho de la pantalla más 80 píxeles */
+    left: 0; /* Pegado al borde izquierdo */
+    width: 100vw; /* El texto ocupará el 100% del ancho de la ventana */
+    height: calc(100vh - 25vw); /* Ajusta la altura según sea necesario */
+    background-color: white; /* Fondo blanco para el texto */
+    padding: 20px;
+    box-sizing: border-box; /* Para incluir el padding en el ancho total */
+    /*z-index: 1000; /* Aseguramos que esté por encima de las imágenes */
+    overflow-y: auto; /* Permite desplazamiento vertical si el contenido es muy largo */
+    transition: top 0.5s ease-in-out; /* Añade una transición suave */
+}
+.gallery .item input:checked ~ .cont section{
+    overflow: hidden; /* Oculta el contenido desbordado */
+    overflow-x: auto; /* Agrega barra de desplazamiento horizontal si es necesario */
+    /*overflow-y: scroll; /* Agrega barra de desplazamiento vertical siempre */
+    z-index: 999;
+    
+}
+/* Estilo para ajustar la posición al hacer scroll */
+.gallery-wrapper {
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    overflow-y: scroll; /* Permite desplazamiento vertical */
+    scroll-padding-top: calc(25vw + 80px); /* Ajusta el padding superior al desplazarse */
+}
+
+.gallery .item input:checked ~ .cont {
+    top: calc(25vw + 80px); /* Comienza a 1/4 del ancho de la pantalla más 80 píxeles */
+}
+
+body:has(.gallery .item input:checked:checked) .gallery-wrapper {
+    scroll-padding-top: 0; /* Ajusta el padding superior cuando el elemento está visible */
+}
+
+
+
+
+.img_pat_int, .gallery .item img {
+    display: block;
+    width: 100%; /* Ajusta el tamaño de la imagen al contenedor */
+    height: auto; /* Mantén la proporción de la imagen */
+    cursor: pointer; /* Cambiamos el cursor al pasar sobre las imágenes */
+    /*z-index: 999; /* Aseguramos que las imágenes estén por encima del contenido */
+}
+
+@media (max-width: 768px) {
+    .gallery .item {
+        flex: 1 1 48%; /* Cada item ocupa aproximadamente el 48% del ancho en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery .item {
+        flex: 1 1 100%; /* Cada item ocupa el 100% del ancho en pantallas muy pequeñas */
+    }
+
+    .gallery .item input:checked ~ .cont {
+        top: 50px; /* Ajusta la posición superior en pantallas pequeñas */
+        height: calc(100vh - 100px); /* Ajusta la altura del contenido */
+    }
+}
+/* Asegúrate de que .cont tenga un mayor z-index */
+
+
+/* Asegúrate de que las imágenes tengan un menor z-index */
+
+
+
